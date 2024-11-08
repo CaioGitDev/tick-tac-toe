@@ -17,29 +17,33 @@ O objetivo deste projeto é desenvolver um jogo do galo em Python, utilizando a 
 4. O jogo termina quando um dos jogadores conseguir colocar três das suas peças numa linha, coluna ou diagonal.
 5. Se todas as casas do tabuleiro estiverem preenchidas e nenhum jogador tiver conseguido vencer, o jogo termina em empate.
 
+## O jogo será dividido em 2 classes principais: `Tabuleiro` e `Jogo`.
+
+A classe `Tabuleiro` terá os seguintes métodos:
+1. `__init__()`: inicializa o tabuleiro com os valores padão.
+2. `draw_board()`: desenha o tabuleiro.
+3. `draw_x()`: adiciona o gif do jogador X ao tabuleiro.
+4. `draw_o()`: adiciona o gif do jogador O ao tabuleiro.
+5. `clear_board()`: limpa o tabuleiro.
+6. `draw_user_message()`: desenha uma mensagem para o utilizador.
+
+Esta classe é responsavel por desenhar todos os elementos do jogo.
+
+A classe `Jogo` terá os seguintes métodos:
+1. `init()`: inicia o jogo, diz quem será o primeiro a jogar e cria uma matriz 3x3 para marcar onde foi jogado.
+2. `handle_click()`: trata o click no tabuleiro e da as coordenadas de onde foi clicado na matriz que depois será convertido em coordenadas x,y.
+3. `check_win()`: verifica se algum jogador ganhou.
 
 ## Descrição do Top-Down Design
 
-O programa é dividido em 3 funções principais:
-1. `desenha_tabuleiro()`: Esta função desenha o tabuleiro do jogo.
-2. `jogada()`: Esta função permite ao jogador fazer uma jogada.
-3. `verifica_vitoria()`: Esta função verifica se um dos jogadores venceu o jogo.
-
-## Descrição do Bottom-Up Design
-
-1. `desenha_tabuleiro()`: 
-    1.1. Desenhar o tabuleiro.
-    1.2. Desenhar as linhas horizontais.
-    1.3. Desenhar as linhas verticais.
-2. `jogada()`:
-    2.1. Obter a posição da jogada.
-    2.2. Verificar se a posição é válida.
-    2.3. Colocar a peça do jogador na posição escolhida.
-3. `verifica_vitoria()`:
-    3.1. Verificar se algum jogador venceu na horizontal.
-    3.2. Verificar se algum jogador venceu na vertical.
-    3.3. Verificar se algum jogador venceu na diagonal.
-
+1. Inicializar o jogo.
+2. Desenhar o tabuleiro.
+3. Esperar que o utilizador clique numa casa do tabuleiro.
+4. Desenhar o gif do jogador correspondente na casa clicada.
+5. Verificar se algum jogador ganhou.
+6. Se algum jogador ganhou, desenhar uma mensagem a dizer quem ganhou.
+7. Se ninguém ganhou, desenhar uma mensagem a dizer que o jogo terminou em empate.
+9. Terminar
 
 ## Referências
 
