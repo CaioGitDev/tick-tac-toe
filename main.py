@@ -108,6 +108,9 @@ class Game:
               print(f"Player {self.current_player} wins!")
               self.board.clear_board()  # Limpa o tabuleiro
               self.board.draw_user_message(f"Player {self.current_player} wins!")  # Exibe a mensagem de vitória
+          elif self.check_tie():
+              self.board.clear_board()
+              self.board.draw_user_message(f"Houve um empate!")
           else:
               # Muda o jogador atual
               self.current_player = "O" if self.current_player == "X" else "X"
@@ -132,6 +135,14 @@ class Game:
       return True
 
     return False
+  
+  def check_tie(self):
+    # verifica se houve empate
+    for row in self.positions:
+      for col in row:
+        if col == "":
+          return False
+    return True
 
 
 Game()
